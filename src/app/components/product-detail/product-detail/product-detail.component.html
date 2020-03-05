@@ -1,0 +1,20 @@
+<div class="container">
+    <section class="col-5">
+        <img src="" alt="">
+        <p>Dietary restrictions</p>
+        <p>Ingredients:</p>
+    </section>
+
+    <section class="col-6">
+        <h1>Product Name</h1>
+        <p>Aliquam sed elementum magna. Curabitur tristique fermentum interdum.  </p>
+        <h2 class="price`">$0.00</h2>
+        <p>Qty:</p>
+        <div class="qty container">
+            <button type="button" (click)="subQty()" class="btn">-</button>
+            <div>{{ quantity }}</div>
+            <button type="button" (click)="addQty()" class="btn">+</button>
+        </div>
+        <button type="button" class="btn">Add to cart</button>
+    </section>
+</div>
