@@ -8,17 +8,34 @@ import { CartOrderSummaryComponent } from './components/cart-order-summary/cart-
 import { ProductCartComponent } from './components/product-cart/product-cart.component';
 import { HeaderComponent } from './components/header/header.component';
 
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+
+import { HomeComponent } from './components/home/home/home.component';
+import { CateringComponent } from './components/catering/catering/catering.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail/product-detail.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
+
     CartViewComponent,
     CartOrderSummaryComponent,
     ProductCartComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent,
+    SignUpComponent,
+    HomeComponent,
+    CateringComponent,
+    ProductDetailComponent
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
