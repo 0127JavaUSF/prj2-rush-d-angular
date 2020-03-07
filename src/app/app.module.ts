@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './components/products/products/products.component';
+import { ProductsComponent } from './components/products/products.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { SummarylistComponent } from './components/summarylist/summarylist.component';
 import { CartViewComponent } from './components/cart-view/cart-view.component';
@@ -14,9 +15,12 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 
-import { HomeComponent } from './components/home/home/home.component';
-import { CateringComponent } from './components/catering/catering/catering.component';
-import { ProductDetailComponent } from './components/product-detail/product-detail/product-detail.component';
+import { HomeComponent } from './components/home/home.component';
+import { CateringComponent } from './components/catering/catering.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ProductsViewComponent } from './components/products-view/products-view.component';
+import { HistoryViewComponent } from './components/history-view/history-view.component';
+import { OrderComponent } from './components/order/order.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +36,16 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     SignUpComponent,
     HomeComponent,
     CateringComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductsViewComponent,
+    HistoryViewComponent,
+    OrderComponent
 
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
