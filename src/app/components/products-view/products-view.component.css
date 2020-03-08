@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+.filter{
+    height: 5vh;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.cake{
+    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/Cover/cake-cover.jpg");
+}
+
+.pie{
+    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/Cover/pie-cover.jpg");
+}
+
+.pastry{
+    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/Cover/pastry-cover.jpg");
+}
+
+.frozen{
+    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/Cover/frozen-cover.jpg");
+}
