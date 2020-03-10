@@ -18,7 +18,7 @@ export class SignUpComponent implements OnInit {
     cardNumber: '',
     expMo: '',
     expYr: '',
-    cvc: '',
+    cvv: '',
 
   }
 

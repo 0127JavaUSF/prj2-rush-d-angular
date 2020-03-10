@@ -13,7 +13,9 @@ export class ProductDetailComponent implements OnInit {
   quantity: number = 0;
 
   addQty(){
-    this.quantity += 1;
+    if (this.quantity <= 4){
+      this.quantity += 1;
+    }
   }
 
   subQty(){
@@ -22,7 +24,6 @@ export class ProductDetailComponent implements OnInit {
     } else{
       this.quantity -= 1;
     }
-    
   }
   
   ngOnInit(): void {

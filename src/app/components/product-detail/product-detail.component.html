@@ -12,7 +12,17 @@
         <p>Qty:</p>
         <div class="qty container">
             <button type="button" (click)="subQty()" class="btn">-</button>
-            <div>{{ quantity }}</div>
+            <div> 
+                <select size="0">
+                    <option>{{quantity}}</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
             <button type="button" (click)="addQty()" class="btn">+</button>
         </div>
         <button type="button" class="btn">Add to cart</button>
