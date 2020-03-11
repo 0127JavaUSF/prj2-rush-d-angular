@@ -13,7 +13,7 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  showSummary(){
-    this.router.navigate(['order-summary']);
+  viewOrderSum(){
+    this.router.navigate(['order-summary'])
   }
 }

@@ -13,8 +13,7 @@ export class SummaryComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  viewPastOrders(){
+  viewOrders(){
     this.router.navigate(['history']);
   }
-
 }

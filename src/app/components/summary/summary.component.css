@@ -14,3 +14,7 @@ h1{
     margin: 20px;
     color: #FF893D;
 }
+
+a{
+    cursor: pointer;
+}
