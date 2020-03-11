@@ -6,16 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-
-
-  private baseUrl = 'http://localhost:9009/products';
   
   constructor( private http: HttpClient) { }
 
-  getProductsList(): Observable<any> {
-    return this.http.get('http://localhost:9009/products');
+
+  getProductList(): Observable<any>{
+    return this.http.get('http://localhost:9009/rush/products');
   }
-
-
-
 }
