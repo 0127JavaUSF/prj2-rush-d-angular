@@ -2,16 +2,18 @@
     display: flex;
     flex-direction: row;
     margin-top: 30px;
+    justify-content: center;
 }
 
-.filter{
+.category{
     height: 5vh;
-    border-radius: 10px;
+    border-radius: 5px;
     text-align: center;
     color: #fff;
     background-size: cover;
     background-position: center;
     cursor: pointer;
+    margin: 10px;
 }
 
 .cake{
@@ -28,4 +30,8 @@
 
 .frozen{
     background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/Cover/frozen-cover.jpg");
+}
+
+.all, .other{
+    background-color: #000;
 }

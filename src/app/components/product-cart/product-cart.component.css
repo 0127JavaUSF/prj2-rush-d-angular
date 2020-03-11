@@ -1,6 +1,27 @@
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.container.main{
+    border-bottom: 1px solid #DCDCDC;
+    padding: 20px;
+}
+
+.container.info{
+    flex-direction: column;
+}
+
+.container.details{
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
 .card-text{
     font-size: 12px;
 }
-select{
-    margin-top: 10px;
-}
+
+
+
+
+

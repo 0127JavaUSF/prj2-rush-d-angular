@@ -1,6 +1,12 @@
+h1{
+    font-size: 2em;
+    text-align: left;
+}
+
 p {
     text-align: left;
 }
-h4{
-    text-align: left;
+
+div{
+    padding: 20px;
 }

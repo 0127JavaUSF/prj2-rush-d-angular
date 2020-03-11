@@ -12,4 +12,5 @@ export class SummarylistComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }

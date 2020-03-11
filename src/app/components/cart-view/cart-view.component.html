@@ -1,7 +1,11 @@
 <a (click)="viewProducts()" routerLink="products" routerLinkActive="active" class="nav-link">◄ Continue Shopping</a>
 
-<div class="container" >
-    <app-product-cart></app-product-cart>
-    <app-cart-order-summary></app-cart-order-summary>
-
+<div class="container row no-gutter col-12" >
+    <div class="cartItems col-12-sm col-9-md col-6-lg">
+        <app-product-cart></app-product-cart>
+        <app-product-cart></app-product-cart>
+        <app-product-cart></app-product-cart>
+        <app-product-cart></app-product-cart>
+    </div>
+    <app-cart-order-summary class="col-12-sm col-3-lg ordSum"></app-cart-order-summary>
 </div>

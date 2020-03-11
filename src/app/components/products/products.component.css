@@ -1,0 +1,25 @@
+button{
+    position: absolute;
+    z-index: 1;
+    top: 0; right: 0;
+}
+
+.product{
+    cursor: pointer;
+    margin: 14px;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+h2{
+    font-size: 1.25rem;
+}
+
+img{
+    border-radius: 5px;
+}
