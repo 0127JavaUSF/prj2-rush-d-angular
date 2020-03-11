@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ProductService } from 'src/app/services/product/product.service';
+import { Product } from "../../classes/product/product";
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-products',
@@ -8,10 +12,18 @@ import { Router } from '@angular/router';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  products: Observable<Product[]>;
+
+  constructor(private productService: ProductService,
+     private router: Router) { }
 
   
-  ngOnInit(): void {
+  ngOnInit() {
+    this.reloadData();
+  }
+
+  reloadData() {
+    this.products = this.productService.getProductsList();
   }
 
   showDetails(){

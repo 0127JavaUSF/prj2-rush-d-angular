@@ -60,3 +60,29 @@ div.biz-val > img{
 h3{
     color: #FF893D;
 }
+
+.carousel{
+    height: 50vh;
+}
+
+.checked {
+    color: rgb(250, 195, 77);
+  }
+
+.carousel-item{
+    text-align: center;
+}
+
+.custImg{
+    width: 100px;
+    border-radius: 50px;
+}
+
+.testInfo{
+    margin: 0 auto;
+}
+
+.testimonial{
+    margin-top: 30px;
+    margin-left: 120px;
+}

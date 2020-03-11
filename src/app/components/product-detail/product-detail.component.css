@@ -14,4 +14,5 @@
 .nav-link{
     margin: 20px;
     color: #FF893D;
+    cursor: pointer;
 }
