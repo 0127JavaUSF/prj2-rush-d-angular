@@ -1,0 +1,16 @@
+h1{
+    font-size: 1.75rem;
+}
+
+.container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-link{
+    margin: 20px;
+    color: #FF893D;
+}

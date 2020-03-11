@@ -1,8 +1,41 @@
-<nav class="container">
-    <div class="filter all col-2">All</div>
-    <div class="filter cake col-2">Cake</div>
-    <div class="filter pie col-2">Pie</div>
-    <div class="filter pastry col-2">Pastry</div>
-    <div class="filter frozen col-2">Frozen</div>
+<nav class="container no-gutter">
+    <div class="category all col-2">All</div>
+    <div class="category cake col-2">Cake</div>
+    <div class="category pie col-2">Pie</div>
+    <div class="category pastry col-2">Pastry</div>
+    <div class="category frozen col-2">Frozen</div>
+    <div class="category other col-2">Other</div>
 </nav>
-<app-products></app-products>
+
+<div class="container no-gutter">
+    <section class="filter col-2">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="vegan">
+            <label class="form-check-label" for="vegan">Vegan</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="dairy-free">
+            <label class="form-check-label" for="dairy-free">Dairy-Free</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="nut-free">
+            <label class="form-check-label" for="nut-free">Nut-Free</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="gluten-free">
+            <label class="form-check-label" for="gluten-free">Gluten-Free</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </section>
+    <app-products class="col-10"></app-products>
+</div>
+
+<nav class="pagination" aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link">Previous</a></li>
+      <li class="page-item"><a class="page-link">1</a></li>
+      <li class="page-item"><a class="page-link">2</a></li>
+      <li class="page-item"><a class="page-link">3</a></li>
+      <li class="page-item"><a class="page-link">Next</a></li>
+    </ul>
+</nav>
