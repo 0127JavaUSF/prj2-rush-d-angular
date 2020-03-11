@@ -14,11 +14,13 @@ export class ProductsComponent implements OnInit {
 
   products: Observable<Product[]>;
 
+
   constructor(private productService: ProductService,
      private router: Router) { }
 
   
   ngOnInit() {
+    console.log(this.products);
     this.reloadData();
   }
 

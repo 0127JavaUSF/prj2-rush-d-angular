@@ -1,10 +1,12 @@
 export class Product {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
+    productJsonId: number;
+    productId: number;
+    productName: string;
+    productPrice: number;
+    productDescription: string;
+    quantityRem: number;
     imgUrl: string;
-    quantity: number;
-    category: number;
-    dietaryRestriction: string;
+    orderItems: Array<number>; 
+    dietaryJoins: Array<number>;
+    dessertCategory: number;
 }
