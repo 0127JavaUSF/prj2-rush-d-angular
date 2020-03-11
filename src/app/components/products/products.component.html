@@ -1,33 +1,8 @@
 <div class="container">
-  <div class="col-2 product" (click)="showDetails()">
+  <div *ngFor="let product of products | async" class="col-2 product" (click)="showDetails()">
     <button type="button add" class="btn btn-outline-danger">+</button>
-    <img src="../../../assets/imgs/placeholder.jpg" class="card-img-top" alt="...">
-    <h2 class="card-title">name</h2>
-    <p>qty</p>
+    <img src="[product.imgUrl]" class="card-img-top" alt="...">
+    <h2 class="card-title"> {{ product.productName }} </h2>
+    <p>{{ product.productPrice | currency}}</p>
   </div>
-  <div class="col-2 product" (click)="showDetails()">
-    <button type="button add" class="btn btn-outline-danger">+</button>
-    <img src="../../../assets/imgs/placeholder.jpg" class="card-img-top" alt="...">
-    <h2 class="card-title">name</h2>
-    <p>qty</p>
-  </div>
-  <div class="col-2 product" (click)="showDetails()">
-    <button type="button add" class="btn btn-outline-danger">+</button>
-    <img src="../../../assets/imgs/placeholder.jpg" class="card-img-top" alt="...">
-    <h2 class="card-title">name</h2>
-    <p>qty</p>
-  </div>
-  <div class="col-2 product" (click)="showDetails()">
-    <button type="button add" class="btn btn-outline-danger">+</button>
-    <img src="../../../assets/imgs/placeholder.jpg" class="card-img-top" alt="...">
-    <h2 class="card-title">name</h2>
-    <p>qty</p>
-  </div>
-  <div class="col-2 product" (click)="showDetails()">
-    <button type="button add" class="btn btn-outline-danger">+</button>
-    <img src="../../../assets/imgs/placeholder.jpg" class="card-img-top" alt="...">
-    <h2 class="card-title">name</h2>
-    <p>qty</p>
-  </div>
-
 </div>
