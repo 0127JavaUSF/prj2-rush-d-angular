@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductService } from 'src/app/services/product/product.service';
-import { Product } from "../../classes/product/product";
+import { Product } from '../../classes/product/product';
 import { Router } from '@angular/router';
 
 
@@ -14,16 +14,15 @@ export class ProductsComponent implements OnInit {
 
   products: Observable<Product[]>;
 
-  constructor(private productService: ProductService,
-     private router: Router) { }
+  constructor( private productService: ProductService, private router: Router) { }
 
-  
   ngOnInit() {
     this.reloadData();
+    console.log(this.products)
   }
-
+  
   reloadData() {
-    this.products = this.productService.getProductsList();
+    this.products = this.productService.getProductList();
   }
 
   showDetails(){
