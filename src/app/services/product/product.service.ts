@@ -11,8 +11,6 @@ export class ProductService {
 
   constructor( private http: HttpClient) { }
 
-  private baseUrl = 'http://localhost:9009/rush/products';
-
   getProductList(): Observable<any>{
     return this.http.get(`${this.baseUrl}`);
   }
