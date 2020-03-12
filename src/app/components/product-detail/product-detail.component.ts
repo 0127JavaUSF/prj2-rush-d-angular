@@ -9,12 +9,10 @@ import { ProductService } from 'src/app/services/product/product.service';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-
-  id: number;
   product: Product;
+  id: number;
 
   constructor(private router: Router, private route: ActivatedRoute, private productService: ProductService) { }
-
 
   quantity: number = 0;
 
@@ -36,7 +34,6 @@ export class ProductDetailComponent implements OnInit {
     this.product = new Product();
 
     this.id = this.route.snapshot.params['id'];
-
 
     this.productService.getProduct(this.id)
       .subscribe( data => {
