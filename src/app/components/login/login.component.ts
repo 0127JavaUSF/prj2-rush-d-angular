@@ -1,5 +1,6 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import {Router} from '@angular/router';
+import { LoginServiceService } from 'src/app/services/login-service.service';
 
 @Component({
   selector: 'app-login',
@@ -8,14 +9,20 @@ import {Router} from '@angular/router';
 })
 
 export class LoginComponent implements OnInit {
-
+ 
   username = '';
   password = '';
-
-  constructor() { }
+  credentials = {
+    username: 'charles',
+    password: 'password'
+  }
+  constructor(private loginService: LoginServiceService) { }
 
   login() {
-    console.log("placeholder for subscribing to a service");
+    const result: any = this.loginService.performLogin(this.credentials)
+    .subscribe(data => console.log(data));
+
+    console.log(result);
 
     }
 
