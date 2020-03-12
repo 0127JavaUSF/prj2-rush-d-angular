@@ -6,12 +6,12 @@ h1, h2, h3 {
     font-family: 'Open Sans', sans-serif;
 }
 
-.btn-outline-danger{
+.btn-outline{
     border-color: #FF893D;
     color: #FF893D;
 }
 
-.btn-outline-danger:hover{
+.btn-outline:hover{
     background-color: #FF893D;
     border-color: #FF893D;
     color: #fff;
