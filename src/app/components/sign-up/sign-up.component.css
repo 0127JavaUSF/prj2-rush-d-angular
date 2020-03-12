@@ -14,3 +14,20 @@ $("#btnLogin").click(function(event) {
     
     form.addClass('was-validated');
 }); */
+
+
+.main{
+  background-image: url("../../../assets/imgs/choc-waff.jpg");
+  background-size: cover;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+}
