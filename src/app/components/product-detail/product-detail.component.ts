@@ -3,7 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/classes/product/product';
 import { ProductService } from 'src/app/services/product/product.service';
 
-
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -14,7 +13,6 @@ export class ProductDetailComponent implements OnInit {
   id: number;
 
   constructor(private router: Router, private route: ActivatedRoute, private productService: ProductService) { }
-
 
   quantity: number = 0;
 
@@ -33,14 +31,15 @@ export class ProductDetailComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.product =new Product()
+    this.product = new Product();
 
     this.id = this.route.snapshot.params['id'];
 
     this.productService.getProduct(this.id)
-    .subscribe(data=> {
-      this.product = data;
-    }, error => console.log(error));
+      .subscribe( data => {
+        console.log(data)
+        this.product = data;
+      }, error => console.log(error));
   }
 
   viewProducts(){

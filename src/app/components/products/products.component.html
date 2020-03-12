@@ -1,7 +1,8 @@
 <div class="container">
-  <div *ngFor="let product of products | async" class="col-2 product" (click)="showDetails()">
-    <img src={{product.imgUrl}} class="card-img-top" alt="...">
+  <div *ngFor="let product of products | async" class="col-lg-3 col-md-4 col-sm-4 product" (click)="showDetails(product.productId)">
+    <img src={{product.imgUrl}} class="card-img-top img-fluid" alt="...">
     <h2 class="card-title"> {{ product.productName }} </h2>
     <p>{{ product.productPrice | currency}}</p>
-  </div>
+    <p>{{ product.productId }}</p>
+   </div>
 </div>
