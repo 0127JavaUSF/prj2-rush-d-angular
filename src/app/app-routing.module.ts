@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'catering', component: CateringComponent },
   { path: 'history', component:  HistoryViewComponent},
   { path: 'products', component:  ProductsViewComponent},
-  { path: 'product-details', component: ProductDetailComponent },
+  { path: 'product-details/:id', component: ProductDetailComponent },
   { path: 'cart', component:  CartViewComponent},
   { path: 'order-summary', component: SummaryComponent }
 ];

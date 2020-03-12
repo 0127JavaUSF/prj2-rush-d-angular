@@ -1,12 +1,12 @@
 <a (click)="viewProducts()" class="nav-link">◄ Continue Shopping</a>
 
-<div class="container row no-gutter">
-    <img class="col-6" src="../../../assets/imgs/placeholder.jpg" alt="">
-    <section class="col-6">
-        <h1>Product Name</h1>
-        <p>Aliquam sed elementum magna. Curabitur tristique fermentum interdum. Aliquam sed elementum magna. Curabitur tristique fermentum interdum.  </p>
+<div *ngIf="product" class="container row no-gutter">
+    <img src={{product.imgUrl}} class="img-fluid col-lg-6 col-md-8 col-sm-10" alt="">
+    <section class="col-lg-5 col-md-4 col-sm-10">
+        <h1>{{ product.productName }}</h1>
+        <p>{{ product.productDescription }}</p>
         <p>Dietary Restrictions: </p>
-        <h2 class="price`">$0.00</h2>
+        <h2 class="price`">{{ product.productPrice | currency }}</h2>
         <h6 class="card-title">Qty:</h6>
         <button type="button" (click)="subQty()" class="btn">-</button>
         <select size="0">

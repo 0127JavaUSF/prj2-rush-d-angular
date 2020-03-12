@@ -19,10 +19,15 @@ h1{
 }
 
 button{
-    background-color: #FF893D;
-    color: #fff;
     position: absolute;
     bottom: 18vh;
+    background-color: #FF893D;
+    color: #fff;
+}
+
+button:hover{
+    background-color: #fff;
+    color: #FF893D;
 }
 
 
@@ -74,8 +79,14 @@ h3{
     color: #FF893D;
 }
 
+h2.review{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 .carousel{
-    height: 50vh;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .checked {
@@ -102,4 +113,5 @@ h3{
 
 .reviews{
     margin: 0 auto;
+    padding: 0;
 }
