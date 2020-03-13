@@ -28,8 +28,13 @@
               <div class="form-group">
                 <input  type="submit" value="Login"  class="btn float-right btn-success"><!--Updates our user-->
               </div>
+             
   
             </form>
+         
+          </div>
+          <div class="alert alert-danger" *ngIf="showError">
+            Invalid username or password
           </div>
           
         </div>
