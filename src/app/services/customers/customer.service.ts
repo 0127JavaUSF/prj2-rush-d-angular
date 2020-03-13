@@ -1,9 +1,18 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
 
-  constructor() { }
+  private baseUrl = 'http://localhost:9009/rush/customer';
+
+  constructor(private http: HttpClient) { }
+
+  createCustomer(customer: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}`, customer)
+  }
+
 }
