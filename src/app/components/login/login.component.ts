@@ -25,28 +25,25 @@ export class LoginComponent implements OnInit {
 
   constructor( private cookieService: CookieService, private loginService: LoginServiceService, private router: Router) { }
 
-  async login() {
-    let credentialsSubmitted = {
+  login() {
+    const credentialsSubmitted = {
       username: this.username,
       password: this.password
     }
-    const aresponse = await this.loginService.performLogin(credentialsSubmitted);
+    this.loginService.performLogin(credentialsSubmitted).subscribe(genericResponse => {
+      console.log(genericResponse);
+      console.log(typeof(genericResponse))
+      if (genericResponse.response == 'User has been verified') {
+        console.log('User credentials found');
+        this.router.navigate(['products']);
+      } else{
+        this.showError = true;
+      }
 
-    if (aresponse.response == 'User has been verified') {
-   
+    }, error =>
+    console.log(error));
+    this.showError = true;
 
-      this.router.navigate(['products']);
-      
-      this.showError = false;
-    } 
-    else {
-      console.log('error being shown or nah?');
-      this.showError = true;
-      
-    }
-
-
-    
 }
 
   ngOnInit() {

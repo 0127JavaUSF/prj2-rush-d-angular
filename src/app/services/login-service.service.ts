@@ -27,8 +27,8 @@ export class LoginServiceService {
 
 
 
-performLogin(credentials: object): Promise<GenericResponse>{
-  return this.httpClient.post<GenericResponse>(`${this.baseurl}/${this.login}`, credentials, { withCredentials: true }).toPromise();
+performLogin(credentials: object): Observable<GenericResponse>{
+  return this.httpClient.post<GenericResponse>(`${this.baseurl}/${this.login}`, credentials, {withCredentials: true});
 }
 
 performSessionDetect(): Observable<any>{
