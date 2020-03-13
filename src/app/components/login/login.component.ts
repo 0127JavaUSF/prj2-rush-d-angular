@@ -1,5 +1,8 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import {Router} from '@angular/router';
+import { LoginServiceService } from 'src/app/services/login-service.service';
+import { GenericResponse } from 'src/app/genericResponse';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -8,18 +11,64 @@ import {Router} from '@angular/router';
 })
 
 export class LoginComponent implements OnInit {
-
+ 
   username = '';
   password = '';
+  // credentials = {
+  //   username: 'charles',
+  //   password: 'password'
+  // }
+  showError = false;
+  sessionResponse: GenericResponse;
+ 
 
-  constructor() { }
+
+  constructor( private cookieService: CookieService, private loginService: LoginServiceService, private router: Router) { }
 
   login() {
-    console.log("placeholder for subscribing to a service");
-
+    const credentialsSubmitted = {
+      username: this.username,
+      password: this.password
     }
+    this.loginService.performLogin(credentialsSubmitted).subscribe(genericResponse => {
+      console.log(genericResponse);
+      console.log(typeof(genericResponse))
+      if (genericResponse.response == 'User has been verified') {
+        console.log('User credentials found');
+        this.router.navigate(['products']);
+      } else{
+        this.showError = true;
+      }
 
-  ngOnInit(): void {
-  }
+    }, error =>
+    console.log(error));
+    this.showError = true;
 
 }
+
+  ngOnInit() {
+  // route to products based on returned response, thus indicating an active session
+
+
+
+  this.loginService.performSessionDetect()
+  .subscribe(genericResponse => {
+    console.log(genericResponse);
+    console.log(typeof(genericResponse))
+    if (genericResponse.response == 'User has active session') {
+      console.log('Authorized cookie found');
+      this.router.navigate(['products']);
+    }
+  }, error => console.log(error));
+
+
+  console.log('session not found');
+
+  }
+  
+
+
+
+}
+
+

@@ -2,53 +2,48 @@
     <span class="anchor" id="formPayment"></span>
 
 
-    <!-- form card cc payment -->
-    
-    <!-- /form card cc payment -->
-
-
 <div class="card card-outline-secondary col-lg-6 col-md-7 offset-md-3">
     <div class="card-body">
         <h3 class="text-center">Create Account</h3>
         <hr>
-        <form ngForm (ngSubmit)="createAccValidation()" class="form" role="form" autocomplete="off">
+        <form ngForm (ngSubmit)="onSubmit()" class="form" role="form" autocomplete="off">
             <div class="container row no-gutter">
                 <div class="form-group col-6">
                     <label for="cc_name">First Name</label>
-                    <input [(ngModel)]="accCreator.firstName" type="text" class="form-control"  name="firstName"  pattern="\w+ \w+.*" title="First and last name" required="required">
+                    <input type="text" class="form-control"  name="fName"  pattern="\w+ \w+.*" title="First and last name" required [(ngModel)]="customer.fName">
                 </div>
                 <div class="form-group col-6">
                     <label for="cc_name">Last Name</label>
-                    <input [(ngModel)]="accCreator.lastName" type="text" class="form-control" name="lastName"  pattern="\w+ \w+.*" title="First and last name" required="required">
+                    <input type="text" class="form-control" name="lName"  pattern="\w+ \w+.*" title="First and last name" required [(ngModel)]="customer.lName">
                 </div>
             </div>
             <div class="form-group">
                 <label for="cc_name">Username</label>
-                <input [(ngModel)]="accCreator.accountName" type="text" class="form-control"  name="accountName"  pattern="\w+ \w+.*" title="First and last name" required="required">
+                <input type="text" class="form-control"  name="username"  pattern="\w+ \w+.*" title="First and last name" required [(ngModel)]="customer.username">
             </div>
             <div class="container row no-gutter">
                 <div class="form-group col-6">
                     <label for="cc_name">Password</label>
-                    <input [(ngModel)]="accCreator.password" type="password" class="form-control"  name="password"  pattern="\w+ \w+.*" title="First and last name" required="required">
+                    <input type="password" class="form-control"  name="password"  pattern="\w+ \w+.*" title="First and last name" required [(ngModel)]="customer.password">
                 </div>
                 <div class="form-group col-6">
                     <label for="cc_name">Repeat Password</label>
-                    <input [(ngModel)]="accCreator.passwordCheck" type="password" class="form-control" name="passwordCheck"   pattern="\w+ \w+.*" title="First and last name" required="required">
+                    <input type="password" class="form-control" name="passwordCheck"   pattern="\w+ \w+.*" title="First and last name" required="required">
                 </div>
             </div>
             
             <div class="form-group">
                 <label for="cc_name">Card Holder's Name</label>
-                <input [(ngModel)]="accCreator.cardHoldName" type="text" class="form-control" name="cardHoldeName"  pattern="\w+ \w+.*" title="First and last name" required="required">
+                <input type="text" class="form-control" name="cardHolderName"  pattern="\w+ \w+.*" title="First and last name" required [(ngModel)]="customer.cardHolderName">
             </div>
             <div class="form-group">
                 <label>Card Number</label>
-                <input [(ngModel)]="accCreator.cardNumber" type="number" min="0" class="form-control" name="cardNumber" autocomplete="off" maxlength="20" pattern="\d{16}" title="Credit card number" required="">
+                <input type="number" min="0" class="form-control" name="creditCardNumber" autocomplete="off" maxlength="20" pattern="\d{16}" title="Credit card number" required [(ngModel)]="customer.creditCardNumber">
             </div>
             <div class="form-group row">
                 <label class="col-md-12">Card Exp. Date</label>
                 <div class="col-md-4">
-                    <select [(ngModel)]="accCreator.expMo" class="form-control" name="accCreator.expMo" size="0">
+                    <select [(ngModel)]="customer.expDate" class="form-control" name="expDate" size="0">
                         <option value="01">01</option>
                         <option value="02">02</option>
                         <option value="03">03</option>
@@ -64,12 +59,13 @@
                     </select>
                 </div>
                 <div class="col-md-4">
-                    <select [(ngModel)]="accCreator.expYr" class="form-control" name="accCreator.expYr" size="0">
+                    <select class="form-control" name="expYr" size="0">
                         <option>2020</option>
                         <option>2021</option>
                         <option>2022</option>
                         <option>2023</option>
                         <option>2024</option>
+                        <option>2025</option>
                         <option>2026</option>
                         <option>2027</option>
                         <option>2028</option>
@@ -80,7 +76,7 @@
                     </select>
                 </div>
                 <div class="col-md-4">
-                    <input [(ngModel)]="accCreator.cvv" type="number" min="0" class="form-control" autocomplete="off" maxlength="3" pattern="\d{3}" title="Three digits at back of your card" required="" name="accCreator.cvv" placeholder="CVV">
+                    <input type="number" min="0" class="form-control" autocomplete="off" maxlength="3" pattern="\d{3}" title="Three digits at back of your card" required [(ngModel)]="customer.cvv" name="cvv" placeholder="CVV">
                 </div>
             </div>
             <div class="form-inline">
