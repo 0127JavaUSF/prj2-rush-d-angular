@@ -31,16 +31,9 @@ performLogin(credentials: object): Promise<GenericResponse>{
   return this.httpClient.post<GenericResponse>(`${this.baseurl}/${this.login}`, credentials, { withCredentials: true }).toPromise();
 }
 
-performSessionDetect(){
-return this.httpClient.get(`${this.baseurl}/${this.session}`, { withCredentials: true })
-.subscribe(
-  response =>{
-  localStorage.getItem('JWT');
-  console.log(response);
-},
-error=>{
-  console.log(error);
-})
+performSessionDetect(): Observable<any>{
+return this.httpClient.get(`${this.baseurl}/${this.session}`, { withCredentials: true });
+
 
 }
 

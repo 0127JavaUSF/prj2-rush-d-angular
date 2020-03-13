@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   //   password: 'password'
   // }
   showError = false;
+  sessionResponse: GenericResponse;
  
 
 
@@ -32,7 +33,7 @@ export class LoginComponent implements OnInit {
     const aresponse = await this.loginService.performLogin(credentialsSubmitted);
 
     if (aresponse.response == 'User has been verified') {
-      console.log('getting jwt or nah?');
+   
 
       this.router.navigate(['products']);
       
@@ -48,17 +49,29 @@ export class LoginComponent implements OnInit {
     
 }
 
-  async ngOnInit() {
+  ngOnInit() {
   // route to products based on returned response, thus indicating an active session
-  const sessionresponse = await this.loginService.performSessionDetect();
-  console.log("session not found");
-    // tslint:disable-next-line: triple-equals
-  // if (sessionresponse.response == '"User has active session"') {
-  //   console.log("Cookie found");
-  //   this.router.navigate(['products']);
-  //   }
-  //   console.log("session not found");
+
+
+
+  this.loginService.performSessionDetect()
+  .subscribe(genericResponse => {
+    console.log(genericResponse);
+    console.log(typeof(genericResponse))
+    if (genericResponse.response == 'User has active session') {
+      console.log('Authorized cookie found');
+      this.router.navigate(['products']);
+    }
+  }, error => console.log(error));
+
+
+  console.log('session not found');
 
   }
+  
+
+
 
 }
+
+
