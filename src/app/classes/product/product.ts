@@ -4,6 +4,7 @@ export class Product {
     productName: string;
     productPrice: number;
     productDescription: string;
+    dietaryRestrictions: string;
     quantityRem: number;
     imgUrl: string;
     dessertCategory: {

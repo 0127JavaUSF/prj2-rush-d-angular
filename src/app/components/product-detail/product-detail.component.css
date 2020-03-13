@@ -29,3 +29,10 @@ h1{
 h2{
     font-size: 1.5rem;
 }
+
+.key{
+    font-size: .8rem;
+    position: absolute;
+    bottom: 0px;
+}
+
