@@ -18,6 +18,8 @@
     background-position: center;
     cursor: pointer;
     margin: 10px;
+    font-weight: 800;
+    font-size: 1.25rem;
 }
 
 .cake{
@@ -36,6 +38,13 @@
     background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/Cover/frozen-cover.jpg");
 }
 
-.all, .other{
-    background-color: #000;
+.all{
+    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/other/all.jpg");
+    background-position: bottom;
+}
+
+.key{
+    font-size: .8rem;
+    text-align: right;
+    margin-top: 20px;
 }
