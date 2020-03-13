@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { SessionService } from 'src/app/service/session.service';
 
 @Component({
   selector: 'app-header',
@@ -8,16 +9,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  //checks if user is in an active session to render particular components
+  
 
-  constructor(private cookieService: CookieService, private router:Router) { }
+  constructor(private sessionService: SessionService, private cookieService: CookieService, private router:Router) { }
   clearCookies(){
     //clear cookies
     this.cookieService.delete('JWT');
-    //check to see if they were clear
+    this.sessionService.setActive(false);
     this.router.navigate(['home']);
 
 
     
+  }
+  isLoggedIn(): boolean{
+    return this.sessionService.getActive();
   }
 
   ngOnInit(): void {

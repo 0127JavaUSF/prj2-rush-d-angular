@@ -13,24 +13,24 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a routerLink="signup" routerLinkActive="active" class="nav-link">Sign Up</a>
+              <a routerLink="signup" routerLinkActive="active" class="nav-link" *ngIf="!isLoggedIn()">Sign Up</a>
             </li>
-            <li class="nav-item ">
+            <li class="nav-item " *ngIf="!isLoggedIn()">
               <a routerLink="login" routerLinkActive="active" class="nav-link">Login</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="isLoggedIn()">
               <a routerLink="history" routerLinkActive="active" class="nav-link">Order History</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="isLoggedIn()">
                 <a routerLink="products" routerLinkActive="active" class="nav-link">Products</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" *ngIf="isLoggedIn()">
                 <a routerLink="catering" routerLinkActive="active" class="nav-link">Catering</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" *ngIf="isLoggedIn()">
                 <a routerLink="cart" routerLinkActive="active" class="nav-link">Cart</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" *ngIf="isLoggedIn()">
                 <a [routerLink]="" (click)="clearCookies()" routerLinkActive="active" class="nav-link">Logout</a>
               </li>
           </ul>
