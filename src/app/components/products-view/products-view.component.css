@@ -5,6 +5,10 @@
     justify-content: center;
 }
 
+.container.categories{
+    flex-wrap: wrap;
+}
+
 .category{
     height: 5vh;
     border-radius: 5px;

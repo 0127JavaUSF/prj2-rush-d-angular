@@ -6,7 +6,9 @@ export class Product {
     productDescription: string;
     quantityRem: number;
     imgUrl: string;
-    orderItems: Array<number>; 
-    dietaryJoins: Array<number>;
-    dessertCategory: number;
+    dessertCategory: {
+        dessertJsonId: number;
+        dessertCategoryId: number;
+        categoryName: string;
+    };
 }

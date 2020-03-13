@@ -93,3 +93,11 @@
     margin-bottom: -15%;
     color: #495057;
 }
+
+.logInComponent{
+    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/other/straw-cake.jpg");
+    background-size: cover;
+    height: 90vh;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
