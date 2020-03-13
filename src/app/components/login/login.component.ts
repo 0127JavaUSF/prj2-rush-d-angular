@@ -2,7 +2,7 @@ import { Component, OnInit, NgModule } from '@angular/core';
 import {Router} from '@angular/router';
 import { LoginServiceService } from 'src/app/services/login-service.service';
 import { GenericResponse } from 'src/app/genericResponse';
-import { CookieService } from 'ngx-cookie-service';
+import { SessionService } from 'src/app/service/session.service';
 
 @Component({
   selector: 'app-login',
@@ -11,19 +11,14 @@ import { CookieService } from 'ngx-cookie-service';
 })
 
 export class LoginComponent implements OnInit {
- 
   username = '';
   password = '';
-  // credentials = {
-  //   username: 'charles',
-  //   password: 'password'
-  // }
+
   showError = false;
   sessionResponse: GenericResponse;
- 
 
 
-  constructor( private cookieService: CookieService, private loginService: LoginServiceService, private router: Router) { }
+  constructor( private sessionService: SessionService, private loginService: LoginServiceService, private router: Router) { }
 
   login() {
     const credentialsSubmitted = {
@@ -35,16 +30,16 @@ export class LoginComponent implements OnInit {
       console.log(typeof(genericResponse))
       if (genericResponse.response == 'User has been verified') {
         console.log('User credentials found');
+        this.sessionService.setActive(true);
         this.router.navigate(['products']);
-      } else{
-        this.showError = true;
-      }
+      } 
 
     }, error =>
     console.log(error));
     this.showError = true;
 
 }
+
 
   ngOnInit() {
   // route to products based on returned response, thus indicating an active session
@@ -57,6 +52,7 @@ export class LoginComponent implements OnInit {
     console.log(typeof(genericResponse))
     if (genericResponse.response == 'User has active session') {
       console.log('Authorized cookie found');
+      this.sessionService.setActive(true);
       this.router.navigate(['products']);
     }
   }, error => console.log(error));
