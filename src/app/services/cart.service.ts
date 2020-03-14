@@ -54,7 +54,7 @@ export class CartService {
   cartLog(){
     this.cart.forEach( (orderItem) => {
       console.log('The order item for product: ' + orderItem.product.productId + ' \n ' + orderItem.product.productDescription 
-      + "\nqty: " + orderItem.qty);
+      + "\nqty: " + orderItem.qty + "\n The cart is detecting " + this.cart.length + "order items...");
      });
   }
 
