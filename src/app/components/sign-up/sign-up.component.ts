@@ -37,6 +37,7 @@ export class SignUpComponent implements OnInit {
 
   customer: Customer = new Customer();
   submitted = false;
+  showError = false;
 
   constructor(private customerService: CustomerService, 
     private router: Router) { }
@@ -51,9 +52,10 @@ export class SignUpComponent implements OnInit {
 
   save() {
     this.customerService.createCustomer(this.customer)
-    .subscribe(data => console.log(data), error => console.log(error));
+    .subscribe(data => this.gotoLogin()
+    , error => console.log(error));
+    this.showError = true;
     this.customer = new Customer();
-    this.gotoList();
   }
 
   onSubmit() {
@@ -61,7 +63,7 @@ export class SignUpComponent implements OnInit {
     this.save();
   }
 
-  gotoList() {
+  gotoLogin() {
     this.router.navigate(['login'])
   }
 }
