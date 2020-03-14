@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/classes/product/product';
 import { ProductService } from 'src/app/services/product/product.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -12,7 +13,8 @@ export class ProductDetailComponent implements OnInit {
   product: Product;
   id: number;
 
-  constructor(private router: Router, private route: ActivatedRoute, private productService: ProductService) { }
+  // tslint:disable-next-line: max-line-length
+  constructor(private cartService: CartService, private router: Router, private route: ActivatedRoute, private productService: ProductService) { }
 
   quantity: number = 0;
 
@@ -29,7 +31,6 @@ export class ProductDetailComponent implements OnInit {
       this.quantity -= 1;
     }
   }
-  
   ngOnInit() {
     this.product = new Product();
 
@@ -43,6 +44,12 @@ export class ProductDetailComponent implements OnInit {
   }
 
   viewProducts(){
+    this.router.navigate(['products']);
+  }
+
+  addToCart(){
+    //add product and quantity to cart
+    this.cartService.addOrderItem(this.product, this.quantity);
     this.router.navigate(['products']);
   }
 }
