@@ -11,17 +11,17 @@ export class ProductCartComponent implements OnInit {
 
   quantity: number = 0;
 
-  addQty(){
-    if (this.quantity <= 4){
-      this.quantity += 1;
+  addQty(prodQty: number){
+    if (prodQty <= 4){
+      prodQty += 1;
     }
   }
 
-  subQty(){
-    if (this.quantity < 1){
-      this.quantity = 0;
+  subQty(prodQty: number){
+    if (prodQty < 1){
+      prodQty = 0;
     } else{
-      this.quantity -= 1;
+      prodQty -= 1;
     }
   }
 
