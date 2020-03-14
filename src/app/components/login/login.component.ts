@@ -63,9 +63,6 @@ export class LoginComponent implements OnInit {
   console.log('session not found');
 
   }
-  
-
-
 
 }
 
