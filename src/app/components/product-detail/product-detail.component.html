@@ -5,7 +5,7 @@
     <section class="col-lg-5 col-md-4 col-sm-10">
         <h1>{{ product.productName }}</h1>
         <p>{{ product.productDescription }}</p>
-        <p>Dietary Restrictions: {{ product.dietaryRestrictions }} </p>
+        <p class="dietr">Dietary Restrictions: {{ product.dietaryRestrictions }} </p>
         <h2 class="price`">{{ product.productPrice | currency }}</h2>
         <h6 class="card-title">Qty:</h6>
         <button type="button" (click)="subQty()" class="btn">-</button>

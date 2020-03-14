@@ -1,12 +1,14 @@
-img{
+div.hero{
+    background-image: url('https://rush-p2.s3.us-east-2.amazonaws.com/upload/other/catering.jpg');
+    background-size: cover;
     width: 100%;
     height: 100vh;
+   
 }
 
-div{
-    text-align: right;
+.info{
+    padding: 70px;
 }
-
 
 h2{
     font-size: 1rem;
