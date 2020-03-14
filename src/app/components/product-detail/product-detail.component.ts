@@ -38,18 +38,24 @@ export class ProductDetailComponent implements OnInit {
 
     this.productService.getProduct(this.id)
       .subscribe( data => {
-        console.log(data)
+        // console.log(data)
         this.product = data;
       }, error => console.log(error));
+
+
+
   }
 
   viewProducts(){
+   
     this.router.navigate(['products']);
   }
 
   addToCart(){
     //add product and quantity to cart
+
     this.cartService.addOrderItem(this.product, this.quantity);
+    this.cartService.cartLog();
     this.router.navigate(['products']);
   }
 }
