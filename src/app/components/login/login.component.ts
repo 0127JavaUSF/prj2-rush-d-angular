@@ -32,8 +32,7 @@ export class LoginComponent implements OnInit {
         console.log('User credentials found');
         this.sessionService.setActive(true);
         this.router.navigate(['products']);
-      } 
-      
+      }
 
 
     }, error =>
