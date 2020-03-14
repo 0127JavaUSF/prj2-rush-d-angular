@@ -2,7 +2,7 @@
   <div *ngFor="let product of products | async" class="col-lg-2 col-md-3 col-sm-4 product" (click)="showDetails(product.productId)">
     <img src={{product.imgUrl}} class="card-img-top img-fluid" alt="...">
     <h2 class="card-title"> {{ product.productName }} </h2>
-    <p class="dcat">{{ product.dietaryRestrictions }}</p>
+    <p class="dietr">{{ product.dietaryRestrictions }}</p>
     <p>{{ product.productPrice | currency}}</p>
   </div>
 </div>
