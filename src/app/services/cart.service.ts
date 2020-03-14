@@ -8,7 +8,7 @@ import { OrderItem } from '../classes/orderItem';
 export class CartService {
 
 
-  qty: number;
+  // qty: number;
 
   cart: Array<OrderItem> = new Array<OrderItem>();
 
@@ -56,6 +56,18 @@ export class CartService {
       console.log('The order item for product: ' + orderItem.product.productId + ' \n ' + orderItem.product.productDescription 
       + "\nqty: " + orderItem.qty + "\n The cart is detecting " + this.cart.length + "order items...");
      });
+  }
+
+  //modifies the quantity while in view cart, adds or subtracts 1
+  quantModifyCartView(orderItem:OrderItem, addOrSub1: number){
+      //find the order item in cart
+      this.cart.forEach( (orderItemInCart) => {
+        if (orderItemInCart.product.productId == orderItem.product.productId) {//this will work since no 2 products have same id
+          orderItemInCart.qty += addOrSub1;
+        }
+      });
+
+
   }
 
 

@@ -17,6 +17,17 @@ export class CartViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addQty(orderItem: OrderItem){
+ 
+    this.cartService.quantModifyCartView(orderItem, 1);
+  }
+
+  subQty(orderItem: OrderItem){
+ 
+    this.cartService.quantModifyCartView(orderItem, -1);
+  }
+  
+
 
 
   viewProducts(){
