@@ -33,10 +33,13 @@ export class LoginComponent implements OnInit {
         this.sessionService.setActive(true);
         this.router.navigate(['products']);
       } 
+      
+
 
     }, error =>
     console.log(error));
     this.showError = true;
+
 
 }
 
