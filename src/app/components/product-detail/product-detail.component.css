@@ -40,3 +40,7 @@ h2{
 .dietr{
     color: #696969;
 }
+.container.details{
+    justify-content: space-evenly;
+    align-items: baseline;
+}

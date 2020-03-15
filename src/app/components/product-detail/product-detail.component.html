@@ -7,12 +7,15 @@
         <p>{{ product.productDescription }}</p>
         <p class="dietr">Dietary Restrictions: {{ product.dietaryRestrictions }} </p>
         <h2 class="price`">{{ product.productPrice | currency }}</h2>
+
         <h6 class="card-title">Qty:</h6>
+        <div class="container details">
         <button type="button" (click)="subQty()" class="btn">-</button>
 
             <p>{{quantity}}</p>
 
         <button type="button" (click)="addQty()" class="btn">+</button>    
+        </div>
         <button type="button" (click)="addToCart()" class="btn btn-outline">Add To Cart</button>
         <p class="key col-10"><b>VG</b> = Vegan, <b>DF</b> = Dairy-Free, <b>NF</b> = Nut-Free, <b>GF</b> = Gluten-Free</p>
     </section>

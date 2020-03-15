@@ -21,15 +21,9 @@
                 <label for="cc_name">Username</label>
                 <input type="text" class="form-control"  maxlength="50" name="username"  pattern="\w+ \w+.*" title="First and last name" required [(ngModel)]="customer.username">
             </div>
-            <div class="container row no-gutter">
-                <div class="form-group col-6">
-                    <label for="cc_name">Password</label>
-                    <input type="password" class="form-control"  name="password"  pattern="\w+ \w+.*" title="First and last name" required [(ngModel)]="customer.password">
-                </div>
-                <div class="form-group col-6">
-                    <label for="cc_name">Repeat Password</label>
-                    <input type="password" class="form-control" name="passwordCheck"   pattern="\w+ \w+.*" title="First and last name" required="required">
-                </div>
+            <div class="form-group">
+                <label for="cc_name">Password</label>
+                <input type="password" class="form-control"  name="password"  pattern="\w+ \w+.*" title="First and last name" required [(ngModel)]="customer.password">
             </div>
             
             <div class="form-group">
@@ -44,6 +38,7 @@
                 <label class="col-md-12">Card Exp. Date</label>
                 <div class="col-md-4">
                     <select [(ngModel)]="customer.expDate" class="form-control" name="expDate" size="0">
+                        <option></option>
                         <option value="01">01</option>
                         <option value="02">02</option>
                         <option value="03">03</option>
@@ -60,6 +55,7 @@
                 </div>
                 <div class="col-md-4">
                     <select class="form-control" name="expYr" size="0">
+                        <option></option>
                         <option>2020</option>
                         <option>2021</option>
                         <option>2022</option>
@@ -88,6 +84,9 @@
                 </div>
             </div>
         </form>
+        <div class="alert alert-danger" *ngIf="showError">
+            One or more fields were left blank.
+        </div>
     </div>
 </div>
 
