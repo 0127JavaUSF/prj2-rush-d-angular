@@ -37,4 +37,18 @@
     font-size: 12px;
 }
 
+/* Questionable css */
+h1{
+    font-size: 2em;
+    text-align: left;
+}
+
+p {
+    text-align: left;
+}
+
+div{
+    padding: 20px;
+}
+
 
