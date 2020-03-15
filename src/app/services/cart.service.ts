@@ -4,6 +4,9 @@ import { OrderItem } from '../classes/orderItem';
 import { Router } from '@angular/router';
 import { OrderJson, OrderItemJson, OrderItemProductJson, CustomerJson } from '../classes/orderJson/orderJson';
 import { stringify } from 'querystring';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +15,13 @@ export class CartService {
 
 
 
+<<<<<<< HEAD
+  constructor(private httpClient: HttpClient) { }
+
+
+=======
   constructor() { }
+>>>>>>> b729d1169c870b4fba53697833529a706fe695fd
   // qty: number;
 
   cart: Array<OrderItem> = new Array<OrderItem>();
@@ -20,6 +29,14 @@ export class CartService {
   custId: number;
 
   orderJson: OrderJson = new OrderJson;
+
+
+  baseurl = `http://localhost:9009`;
+  orderApi = `rush/orders`;
+
+  performOrderSubmission(): Observable<OrderJson>{
+    return this.httpClient.post<OrderJson>(`${this.baseurl}/${this.orderApi}`, {withCredentials: true});
+  }
 
   addOrderItem(product: Product, quantity: number){
     console.log("Given product id of: " + product.productId);

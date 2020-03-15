@@ -26,7 +26,7 @@
         <p>Subtotal: {{subtotal | currency }}</p>
         <p>Tax: {{subtotal * .07 | currency }} </p>
         <p>Total: {{subtotal + subtotal *.07  | currency }} </p>
-        <button type="button" class="btn btn-outline-success">Checkout</button>
+        <button type="button" (click)="submitOrder()" class="btn btn-outline-success">Checkout</button>
     </div>
     <!-- <app-cart-order-summary class="col-sm-12 col-lg-3 ordSum"></app-cart-order-summary> -->
 </div>
