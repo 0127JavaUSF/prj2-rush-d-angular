@@ -7,9 +7,5 @@ export class Product {
     dietaryRestrictions: string;
     quantityRem: number;
     imgUrl: string;
-    dessertCategory: {
-        dessertJsonId: number;
-        dessertCategoryId: number;
-        categoryName: string;
-    };
+    dessertCategory: string;
 }

@@ -9,6 +9,7 @@ import { SummaryComponent } from './components/summary/summary.component';
 import { HistoryViewComponent } from './components/history-view/history-view.component';
 import { ProductsViewComponent } from './components/products-view/products-view.component';
 import { HomeComponent } from './components/home/home.component';
+import { CreditsComponent } from './components/credits/credits/credits.component';
 
 
 
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'products', component:  ProductsViewComponent},
   { path: 'product-details/:id', component: ProductDetailComponent },
   { path: 'cart', component:  CartViewComponent},
-  { path: 'order-summary/:id', component: SummaryComponent }
+  { path: 'order-summary/:id', component: SummaryComponent },
+  { path: 'credits', component: CreditsComponent }
 ];
 
 @NgModule({

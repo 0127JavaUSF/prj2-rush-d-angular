@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './components/products/products.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { SummarylistComponent } from './components/summarylist/summarylist.component';
 import { CartViewComponent } from './components/cart-view/cart-view.component';
@@ -24,11 +23,11 @@ import { ProductsViewComponent } from './components/products-view/products-view.
 import { HistoryViewComponent } from './components/history-view/history-view.component';
 import { OrderComponent } from './components/order/order.component';
 import { FooterComponent } from './components/footer/footer/footer.component';
+import { CreditsComponent } from './components/credits/credits/credits.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent,
     SummaryComponent,
     SummarylistComponent,
     CartViewComponent,
@@ -42,7 +41,8 @@ import { FooterComponent } from './components/footer/footer/footer.component';
     ProductsViewComponent,
     HistoryViewComponent,
     OrderComponent,
-    FooterComponent
+    FooterComponent,
+    CreditsComponent
 
   ],
   imports: [
