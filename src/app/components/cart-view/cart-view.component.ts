@@ -65,4 +65,13 @@ export class CartViewComponent implements OnInit {
   viewProducts(){
     this.router.navigate(['products']);
   }
+
+  submitOrder(){
+    this.cartService.performOrderSubmission().subscribe(orderJson => {
+      console.log(orderJson);
+
+    }, error =>
+    console.log(error));
+
+  }
 }
