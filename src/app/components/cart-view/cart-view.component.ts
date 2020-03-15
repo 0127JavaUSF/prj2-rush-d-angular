@@ -16,7 +16,10 @@ export class CartViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.changeSubTotal();
-
+    
+    //delete this, for testing only
+    console.log("The active user id is: " + this.cartService.custId);
+    this.cartService.prepOrderJson();
   }
 
   addQty(orderItem: OrderItem){
@@ -60,5 +63,14 @@ export class CartViewComponent implements OnInit {
 
   viewProducts(){
     this.router.navigate(['products']);
+  }
+
+  submitOrder(){
+    this.cartService.performOrderSubmission().subscribe(orderJson => {
+      console.log(orderJson);
+
+    }, error =>
+    console.log(error));
+
   }
 }
