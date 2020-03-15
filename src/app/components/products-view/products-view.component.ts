@@ -11,29 +11,24 @@ import { Router } from '@angular/router';
 })
 export class ProductsViewComponent implements OnInit {
 
-  products: Observable<Product[]>;
+  products$: Observable<Product[]>;
   categoryName: String;
 
   constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit() {
     this.reloadData();
-    console.log(this.products)
+    console.log(this.products$)
   }
 
   reloadData() {
-    this.products = this.productService.getProductList();
+    this.products$ = this.productService.getProductList();
   }
 
   setCategory(categoryName: string){
     this.categoryName = new String();
     this.categoryName = categoryName;
-    this.productService.getCat(this.categoryName)
-    .subscribe(data => {
-      this.products = data;
-      console.log(data)
-    }, error => console.log(error));
-    console.log(this.categoryName);
+    this.products$ = this.productService.getCat(this.categoryName);
   }
 
   showDetails(id: number){

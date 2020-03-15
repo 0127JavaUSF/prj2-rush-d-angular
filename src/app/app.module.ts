@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './components/products/products.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { SummarylistComponent } from './components/summarylist/summarylist.component';
 import { CartViewComponent } from './components/cart-view/cart-view.component';
@@ -29,7 +28,6 @@ import { CreditsComponent } from './components/credits/credits/credits.component
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent,
     SummaryComponent,
     SummarylistComponent,
     CartViewComponent,

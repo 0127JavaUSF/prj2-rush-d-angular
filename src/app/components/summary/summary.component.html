@@ -1,7 +1,9 @@
 <a (click)="viewOrders()" routerLink="history" routerLinkActive="active" class="nav-link">◄ Back to Orders</a>
 
 <div class="container">
-    <h1>Order #  - 03/20/20</h1>
-    <h1>Total: $0.00 </h1>
+    <h1>Order# {{ orderItems[0].order.orderId }} - {{ orderItems[0].order.order_date }}</h1>
+    <h1>Total: {{ orderItems[0].order.orderTotal | currency }} </h1>
 </div>
 <app-summarylist></app-summarylist>
+
+orderId
