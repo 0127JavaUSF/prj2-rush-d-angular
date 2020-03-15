@@ -24,6 +24,7 @@ import { ProductsViewComponent } from './components/products-view/products-view.
 import { HistoryViewComponent } from './components/history-view/history-view.component';
 import { OrderComponent } from './components/order/order.component';
 import { FooterComponent } from './components/footer/footer/footer.component';
+import { CreditsComponent } from './components/credits/credits/credits.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { FooterComponent } from './components/footer/footer/footer.component';
     ProductsViewComponent,
     HistoryViewComponent,
     OrderComponent,
-    FooterComponent
+    FooterComponent,
+    CreditsComponent
 
   ],
   imports: [

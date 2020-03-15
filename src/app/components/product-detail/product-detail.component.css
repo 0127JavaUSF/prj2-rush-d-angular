@@ -32,8 +32,9 @@ h2{
 
 .key{
     font-size: .8rem;
-    position: absolute;
-    bottom: 0px;
+    position: relative;
+    margin-top: 50px;
+    padding: 0;
 }
 
 .dietr{

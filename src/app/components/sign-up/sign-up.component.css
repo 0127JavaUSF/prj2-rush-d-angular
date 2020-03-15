@@ -17,7 +17,7 @@ $("#btnLogin").click(function(event) {
 
 
 .main{
-  background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/other/choc-waff.jpg");
+  background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/other/signup.jpg");
   background-size: cover;
   width: 100%;
   padding-top: 40px;
