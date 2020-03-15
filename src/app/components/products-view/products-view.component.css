@@ -23,23 +23,23 @@
 }
 
 .cake{
-    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/Cover/cake-cover.jpg");
+    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/category/cake.jpg");
 }
 
 .pie{
-    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/Cover/pie-cover.jpg");
+    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/category/pie.jpg");
 }
 
 .pastry{
-    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/Cover/pastry-cover.jpg");
+    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/category/pastry.jpg");
 }
 
 .frozen{
-    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/Cover/frozen-cover.jpg");
+    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/category/frozen.jpg");
 }
 
 .all{
-    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/other/all.jpg");
+    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/category/all.jpg");
     background-position: bottom;
 }
 

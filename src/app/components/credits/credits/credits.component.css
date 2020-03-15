@@ -1,0 +1,45 @@
+svg{
+    height:12px;
+    width:auto;
+    position:relative;
+    vertical-align:middle;
+    top:-2px;
+    fill:white;
+}
+
+span{
+    display:inline-block;
+    padding:2px 3px;
+}
+
+a{
+    background-color:black;
+    color:white;
+    text-decoration:none;
+    padding:4px 6px;
+    font-family: Arial, sans-serif;
+    font-size:12px;
+    font-weight:bold;
+    line-height:1.2;
+    display:inline-block;
+    border-radius:3px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+h2{
+    color: #FF893D;
+    font-size: 1.25rem;
+    margin-left: 15px;
+}
+
+p{
+    margin-right: 15px;
+    margin-left: 50px;
+    margin-bottom: 0;
+}
+
+h1{
+    font-size: 1.75rem;
+    margin: 30px;
+}
