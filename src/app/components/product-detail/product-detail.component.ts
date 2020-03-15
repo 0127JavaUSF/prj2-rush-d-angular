@@ -16,7 +16,7 @@ export class ProductDetailComponent implements OnInit {
   // tslint:disable-next-line: max-line-length
   constructor(private cartService: CartService, private router: Router, private route: ActivatedRoute, private productService: ProductService) { }
 
-  quantity: number = 0;
+  quantity: number = 1;
 
   addQty(){
     if (this.quantity <= 4){
@@ -25,8 +25,8 @@ export class ProductDetailComponent implements OnInit {
   }
 
   subQty(){
-    if (this.quantity < 1){
-      this.quantity = 0;
+    if (this.quantity < 2){
+      this.quantity = 1;
     } else{
       this.quantity -= 1;
     }

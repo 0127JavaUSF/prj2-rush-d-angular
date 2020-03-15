@@ -28,16 +28,12 @@ export class CartViewComponent implements OnInit {
       this.cartService.quantModifyCartView(orderItem, 1);
       this.changeSubTotal();
     }
-
-
-
-
   }
 
   subQty(orderItem: OrderItem){
 
 
-    if(orderItem.qty <= 0){
+    if(orderItem.qty < 2){
     }
     else{
       this.cartService.quantModifyCartView(orderItem, -1);
@@ -50,7 +46,6 @@ export class CartViewComponent implements OnInit {
 
 
   }
-
   removeItem(orderItem: OrderItem){
     this.cartService.removeItemInCart(orderItem);
     console.log("item removed");
