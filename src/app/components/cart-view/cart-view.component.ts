@@ -20,7 +20,7 @@ export class CartViewComponent implements OnInit {
   }
 
   addQty(orderItem: OrderItem){
- 
+
     
     if(orderItem.qty >= 5){
       
@@ -29,6 +29,8 @@ export class CartViewComponent implements OnInit {
       this.cartService.quantModifyCartView(orderItem, 1);
       this.changeSubTotal();
     }
+
+
 
 
   }
@@ -58,9 +60,6 @@ export class CartViewComponent implements OnInit {
   private changeSubTotal(){
     this.subtotal = this.cartService.getSubTotal();
   }
-  
-
-
 
   viewProducts(){
     this.router.navigate(['products']);
