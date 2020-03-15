@@ -11,8 +11,6 @@ export class CartService {
 
 
   constructor() { }
-
-
   // qty: number;
 
   cart: Array<OrderItem> = new Array<OrderItem>();
