@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Product } from '../classes/product/product';
 import { OrderItem } from '../classes/orderItem';
 import { Router } from '@angular/router';
+import { OrderJson, OrderItemJson, OrderItemProductJson, CustomerJson } from '../classes/orderJson/orderJson';
+import { stringify } from 'querystring';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +20,8 @@ export class CartService {
   cart: Array<OrderItem> = new Array<OrderItem>();
   subtotal: number;
   custId: number;
+
+  orderJson: OrderJson = new OrderJson;
 
   addOrderItem(product: Product, quantity: number){
     console.log("Given product id of: " + product.productId);
@@ -89,6 +93,33 @@ export class CartService {
     this.cart = this.cart.filter(orderItemInCart => 
       orderItemInCart.product.productId !== orderItem.product.productId); 
       
+  }
+
+
+  prepOrderJson(){
+
+    //initalize whats needed in the OrderJson
+    
+    this.orderJson.orderItems = new Array<OrderItemJson>();
+    this.orderJson.customer = new CustomerJson();
+    this.orderJson.customer.custId = this.custId;
+    this.orderJson.orderTotal = this.getSubTotal() + this.getSubTotal() * .07;
+    
+    this.cart.forEach(orderItem => {
+       const orderItemJson: OrderItemJson = new OrderItemJson();
+       orderItemJson.product = new OrderItemProductJson();
+
+       orderItemJson.quantity = orderItem.qty;
+       orderItemJson.itemPrice = orderItem.product.productPrice * orderItem.qty;
+
+       orderItemJson.product.productId = orderItem.product.productId;
+       this.orderJson.orderItems.push(orderItemJson);
+    });
+
+
+    console.log(this.orderJson);
+
+
   }
 
 
