@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product/product.service';
+import { Observable } from 'rxjs';
+import { Product } from 'src/app/classes/product/product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products-view',
@@ -8,11 +11,34 @@ import { ProductService } from 'src/app/services/product/product.service';
 })
 export class ProductsViewComponent implements OnInit {
 
-  constructor() { }
+  products: Observable<Product[]>;
+  categoryName: String;
 
-  ngOnInit(): void {
+  constructor(private productService: ProductService, private router: Router) { }
+
+  ngOnInit() {
+    this.reloadData();
+    console.log(this.products)
   }
 
+  reloadData() {
+    this.products = this.productService.getProductList();
+  }
+
+  setCategory(categoryName: string){
+    this.categoryName = new String();
+    this.categoryName = categoryName;
+    this.productService.getCat(this.categoryName)
+    .subscribe(data => {
+      this.products = data;
+      console.log(data)
+    }, error => console.log(error));
+    console.log(this.categoryName);
+  }
+
+  showDetails(id: number){
+    this.router.navigate(['product-details', id]);
+  }
 
 
 
