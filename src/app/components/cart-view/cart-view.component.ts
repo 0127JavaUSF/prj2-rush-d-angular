@@ -20,15 +20,13 @@ export class CartViewComponent implements OnInit {
   addQty(orderItem: OrderItem){
  
     this.cartService.quantModifyCartView(orderItem, 1);
+
   }
 
   subQty(orderItem: OrderItem){
  
     this.cartService.quantModifyCartView(orderItem, -1);
   }
-  
-
-
 
   viewProducts(){
     this.router.navigate(['products']);

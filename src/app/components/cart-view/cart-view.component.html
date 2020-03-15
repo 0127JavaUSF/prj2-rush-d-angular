@@ -18,15 +18,8 @@
               <div class="container details">
                 <h6 class="card-title">Qty:</h6>
                 <button type="button" (click)="subQty(orderItem)" class="btn">-</button>
-                <select size="0">
-                  <option>{{orderItem.qty}}</option>
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
+                  <p>{{orderItem.qty}}</p>
+
                 <button type="button" (click)="addQty(orderItem)" class="btn">+</button>    
                 <h6 class="card-title">${{orderItem.product.productPrice*orderItem.qty}}.00</h6>
                 <button type="button" class=" btn btn-outline">x</button>
