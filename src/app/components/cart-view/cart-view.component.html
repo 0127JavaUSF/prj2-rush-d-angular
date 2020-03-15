@@ -1,11 +1,40 @@
 <a (click)="viewProducts()" routerLink="products" routerLinkActive="active" class="nav-link">◄ Continue Shopping</a>
 
 <div class="container row no-gutter col-12" >
-    <div class="cartItems col-lg-6 col-md-9 col-sm-12">
-        <app-product-cart></app-product-cart>
-        <app-product-cart></app-product-cart>
-        <app-product-cart></app-product-cart>
-        <app-product-cart></app-product-cart>
+
+      <!-- <div *ngFor="let product of products | async" class="col-lg-2 col-md-3 col-sm-4 product" (click)="showDetails(product.productId)">
+    <img src={{product.imgUrl}} class="card-img-top img-fluid" alt="...">
+    <h2 class="card-title"> {{ product.productName }} </h2>
+    <p class="dietr">{{ product.dietaryRestrictions }}</p>
+    <p>{{ product.productPrice | currency}}</p>
+  </div> -->
+   
+    <div *ngFor="let orderItem of cart" class="cartItems col-lg-6 col-md-9 col-sm-12">
+        <div class="container main">
+  
+            <img src="../../../assets/imgs/placeholder.jpg" class="col-2" alt="...">
+            <div class="info container">
+              <h5 class="card-title">{{ orderItem.product.productName }}</h5>
+              <div class="container details">
+                <h6 class="card-title">Qty:</h6>
+                <button type="button" (click)="subQty(orderItem)" class="btn">-</button>
+                <select size="0">
+                  <option>{{orderItem.qty}}</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <button type="button" (click)="addQty(orderItem)" class="btn">+</button>    
+                <h6 class="card-title">${{orderItem.product.productPrice*orderItem.qty}}.00</h6>
+                <button type="button" class=" btn btn-outline">x</button>
+              </div>
+            </div>
+                  
+          </div>
+
     </div>
     <app-cart-order-summary class="col-sm-12 col-lg-3 ordSum"></app-cart-order-summary>
 </div>
