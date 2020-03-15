@@ -15,9 +15,13 @@ export class CartService {
 
 
 
+<<<<<<< HEAD
   constructor(private httpClient: HttpClient) { }
 
 
+=======
+  constructor() { }
+>>>>>>> b729d1169c870b4fba53697833529a706fe695fd
   // qty: number;
 
   cart: Array<OrderItem> = new Array<OrderItem>();
