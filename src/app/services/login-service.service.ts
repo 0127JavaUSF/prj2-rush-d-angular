@@ -13,11 +13,7 @@ import { GenericResponse } from '../genericResponse';
 export class LoginServiceService {
 
   constructor(private httpClient: HttpClient) { }
-  // public currentUser: GenericResponse = {
-  //   response: '',
-  //   custId: null
 
-  // }
   
 
 

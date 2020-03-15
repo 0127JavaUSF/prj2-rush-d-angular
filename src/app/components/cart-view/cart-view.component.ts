@@ -19,7 +19,7 @@ export class CartViewComponent implements OnInit {
     
     //delete this, for testing only
     console.log("The active user id is: " + this.cartService.custId);
-
+    this.cartService.prepOrderJson();
   }
 
   addQty(orderItem: OrderItem){
