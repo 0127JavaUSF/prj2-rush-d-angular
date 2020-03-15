@@ -27,7 +27,7 @@ export class CartViewComponent implements OnInit {
   }
 
   subQty(orderItem: OrderItem){
- 
+
     this.cartService.quantModifyCartView(orderItem, -1);
     this.changeSubTotal();
 
