@@ -12,7 +12,7 @@
     <div *ngFor="let orderItem of cart" class="cartItems col-lg-6 col-md-9 col-sm-12">
         <div class="container main">
   
-            <img src="../../../assets/imgs/placeholder.jpg" class="col-2" alt="...">
+            <img src={{orderItem.product.imgUrl}} class="col-3" alt="...">
             <div class="info container">
               <h5 class="card-title">{{ orderItem.product.productName }}</h5>
               <div class="container details">
@@ -22,12 +22,23 @@
 
                 <button type="button" (click)="addQty(orderItem)" class="btn">+</button>    
                 <h6 class="card-title">${{orderItem.product.productPrice*orderItem.qty}}.00</h6>
-                <button type="button" class=" btn btn-outline">x</button>
+                <button type="button" (click)="removeItem(orderItem)" class=" btn btn-outline">x</button>
               </div>
             </div>
                   
           </div>
 
     </div>
-    <app-cart-order-summary class="col-sm-12 col-lg-3 ordSum"></app-cart-order-summary>
+
+
+    <div class="col-sm-12 col-lg-3 ordSum">
+
+    
+        <h1>Order Summary</h1>
+        <p>Subtotal: {{subtotal}}</p>
+        <p>Tax: {{subtotal * .07 | number}} </p>
+        <p>Total: {{subtotal + subtotal *.07 | number}} </p>
+        <button type="button" class="btn btn-outline-success">Checkout</button>
+    </div>
+    <!-- <app-cart-order-summary class="col-sm-12 col-lg-3 ordSum"></app-cart-order-summary> -->
 </div>

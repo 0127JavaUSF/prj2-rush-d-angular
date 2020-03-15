@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderItem } from '../../classes/order/orderItem';
+import { ActivatedRoute } from '@angular/router';
+import { OrderService } from 'src/app/services/order/order.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-summarylist',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummarylistComponent implements OnInit {
 
-  constructor() { }
+  orderItems : Observable<OrderItem[]>;
+  id: number; 
+
+  constructor(private route: ActivatedRoute, private orderService: OrderService) { }
 
   ngOnInit(): void {
+
+    this.id = this.route.snapshot.params['id'];
+
+    this.orderService.getOrderItems(this.id)
+      .subscribe( data => {
+        console.log(data)
+        this.orderItems = data;
+      }, error => console.log(error));
   }
 
 
