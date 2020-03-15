@@ -21,21 +21,38 @@ export class CartViewComponent implements OnInit {
 
   addQty(orderItem: OrderItem){
  
-    this.cartService.quantModifyCartView(orderItem, 1);
-    this.changeSubTotal();
+    
+    if(orderItem.qty >= 5){
+      
+    }
+    else{
+      this.cartService.quantModifyCartView(orderItem, 1);
+      this.changeSubTotal();
+    }
+
 
   }
 
   subQty(orderItem: OrderItem){
 
-    this.cartService.quantModifyCartView(orderItem, -1);
-    this.changeSubTotal();
+    if(orderItem.qty <= 0){
+    }
+    else{
+      this.cartService.quantModifyCartView(orderItem, -1);
+      if (orderItem.qty == 0){
+          this.removeItem(orderItem);
+         
+      }
+      this.changeSubTotal();      
+    }
+
 
   }
 
   removeItem(orderItem: OrderItem){
     this.cartService.removeItemInCart(orderItem);
-    
+    console.log("item removed");
+
   }
 
   private changeSubTotal(){
