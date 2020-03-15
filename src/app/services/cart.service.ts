@@ -17,6 +17,7 @@ export class CartService {
 
   cart: Array<OrderItem> = new Array<OrderItem>();
   subtotal: number;
+  custId: number;
 
   addOrderItem(product: Product, quantity: number){
     console.log("Given product id of: " + product.productId);

@@ -16,6 +16,9 @@ export class CartViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.changeSubTotal();
+    
+    //delete this, for testing only
+    console.log("The active user id is: " + this.cartService.custId);
 
   }
 

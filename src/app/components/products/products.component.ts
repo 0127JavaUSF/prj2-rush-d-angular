@@ -19,8 +19,8 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     this.reloadData();
     console.log(this.products)
+
   }
-  
   reloadData() {
     this.products = this.productService.getProductList();
   }

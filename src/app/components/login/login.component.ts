@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import { LoginServiceService } from 'src/app/services/login-service.service';
 import { GenericResponse } from 'src/app/genericResponse';
 import { SessionService } from 'src/app/service/session.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
   sessionResponse: GenericResponse;
 
 
-  constructor( private sessionService: SessionService, private loginService: LoginServiceService, private router: Router) { }
+  constructor( private cartService: CartService,
+               private sessionService: SessionService, private loginService: LoginServiceService, private router: Router) { }
 
   login() {
     const credentialsSubmitted = {
@@ -32,6 +34,7 @@ export class LoginComponent implements OnInit {
         console.log('User credentials found');
         this.sessionService.setActive(true);
         this.router.navigate(['products']);
+        this.cartService.custId = genericResponse.custId;
       }
 
 
