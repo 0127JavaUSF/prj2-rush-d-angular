@@ -35,7 +35,7 @@ export class CartViewComponent implements OnInit {
 
   removeItem(orderItem: OrderItem){
     this.cartService.removeItemInCart(orderItem);
-    this.router.navigate(['cart']);
+    
   }
 
   private changeSubTotal(){
