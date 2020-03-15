@@ -16,16 +16,12 @@
                 <h6 class="card-title">{{orderItem.product.productPrice*orderItem.qty | currency }}</h6>
                 <button type="button" (click)="removeItem(orderItem)" class=" btn btn-outline">x</button>
               </div>
-            </div>
-                  
+            </div>  
           </div>
-
     </div>
 
 
     <div class="col-sm-12 col-lg-3 ordSum">
-
-    
         <h1>Order Summary</h1>
         <p>Subtotal: {{subtotal | currency }}</p>
         <p>Tax: {{subtotal * .07 | currency }} </p>
