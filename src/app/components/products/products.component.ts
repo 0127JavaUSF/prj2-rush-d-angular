@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ProductService } from 'src/app/services/product/product.service';
-import { Product } from '../../classes/product/product';
-import { Router } from '@angular/router';
+ import { Component, OnInit } from '@angular/core';
+// import { Observable } from 'rxjs';
+// import { ProductService } from 'src/app/services/product/product.service';
+// import { Product } from '../../classes/product/product';
+// import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,21 +12,21 @@ import { Router } from '@angular/router';
 })
 export class ProductsComponent implements OnInit {
 
-  products: Observable<Product[]>;
+//   products: Observable<Product[]>;
 
-  constructor( private productService: ProductService, private router: Router) { }
+//   constructor( private productService: ProductService, private router: Router) { }
 
   ngOnInit() {
-    this.reloadData();
-    console.log(this.products)
+//     this.reloadData();
+//     console.log(this.products)
   }
   
-  reloadData() {
-    this.products = this.productService.getProductList();
-  }
+//   reloadData() {
+//     this.products = this.productService.getProductList();
+//   }
 
-  showDetails(id: number){
-    this.router.navigate(['product-details', id]);
-  }
+//   showDetails(id: number){
+//     this.router.navigate(['product-details', id]);
+//   }
 
 }

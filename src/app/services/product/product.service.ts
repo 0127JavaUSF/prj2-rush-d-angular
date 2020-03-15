@@ -18,4 +18,8 @@ export class ProductService {
   getProduct(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
+
+  getCat(category: String): Observable<any>{
+    return this.http.get(`${this.baseUrl}/category/${category}`)
+  }
 }

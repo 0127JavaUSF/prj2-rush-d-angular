@@ -20,7 +20,6 @@ export class CartViewComponent implements OnInit {
   }
 
   addQty(orderItem: OrderItem){
-
     
     if(orderItem.qty >= 5){
       
@@ -36,6 +35,7 @@ export class CartViewComponent implements OnInit {
   }
 
   subQty(orderItem: OrderItem){
+
 
     if(orderItem.qty <= 0){
     }

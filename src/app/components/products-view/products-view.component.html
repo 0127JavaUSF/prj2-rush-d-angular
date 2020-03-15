@@ -1,12 +1,22 @@
 <nav class="container no-gutter categories">
-    <div class="category all col-lg-2 col-sm-3"><p>All</p></div>
-    <div class="category cake col-lg-2 col-sm-3"><p>Cake</p></div>
-    <div class="category pie col-lg-2 col-sm-3"><p>Pie</p></div>
-    <div class="category pastry col-lg-2 col-sm-3"><p>Pastry</p></div>
-    <div class="category frozen col-lg-2 col-sm-3"><p>Frozen</p></div>
+    <div class="category all col-lg-2 col-sm-3" (click) = "ngOnInit()"><p>All</p></div>
+    <div class="category cake col-lg-2 col-sm-3" (click) = "setCategory('Cake')"><p>Cake</p></div>
+    <div class="category pie col-lg-2 col-sm-3" (click) = "setCategory('Pie')"><p>Pie</p></div>
+    <div class="category pastry col-lg-2 col-sm-3" (click) = "setCategory('Pastry')"><p>Pastry</p></div>
+    <div class="category frozen col-lg-2 col-sm-3" (click) = "setCategory('Frozen')"><p>Frozen</p></div>
 </nav>
 
 <p class="key col-10"><b>VG</b> = Vegan, <b>DF</b> = Dairy-Free, <b>NF</b> = Nut-Free, <b>GF</b> = Gluten-Free</p>
 
-<app-products class="col-10"></app-products>
+<!-- <app-products class="col-10"></app-products> -->
+
+<div class="container">
+    <div *ngFor="let product of products | async" class="col-lg-2 col-md-3 col-sm-4 product" (click)="showDetails(product.productId)">
+      <img src={{product.imgUrl}} class="card-img-top img-fluid" alt="...">
+      <h2 class="card-title"> {{ product.productName }} </h2>
+      <p class="dietr">{{ product.dietaryRestrictions }}</p>
+      <p>{{ product.productPrice | currency}}</p>
+    </div>
+  </div>
+
 
