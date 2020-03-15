@@ -1,34 +1,11 @@
-<div class="container">
-    <img class="col-2" src="../../../assets/imgs/placeholder.jpg" alt="a product"/>
-    <h2>Cake Pop</h2>
-    <p class="col-3 center">Quantity: 7</p>
-    <p class="col-3 center">$0.00</p>
+<div *ngFor="let item of orderItems" class="container">
+    <img class="col-2" src={{item.product.imgUrl}} alt="a product"/>
+    <h2>{{ item.product.productName }}</h2>
+    <p class="col-3 center">Quantity: {{ item.quantity }}</p>
+    <p class="col-3 center">{{ item.itemPrice | currency }}</p>
 </div>
 
-<div class="container">
-    <img class="col-2" src="../../../assets/imgs/placeholder.jpg" alt="a product"/>
-    <h2>Cake Pop</h2>
-    <p class="col-3 center">Quantity: 7</p>
-    <p class="col-3 center">$0.00</p>
-</div>
 
-<div class="container">
-    <img class="col-2" src="../../../assets/imgs/placeholder.jpg" alt="a product"/>
-    <h2>Cake Pop</h2>
-    <p class="col-3 center">Quantity: 7</p>
-    <p class="col-3 center">$0.00</p>
-</div>
+<!-- 
 
-<div class="container">
-    <img class="col-2" src="../../../assets/imgs/placeholder.jpg" alt="a product"/>
-    <h2>Cake Pop</h2>
-    <p class="col-3 center">Quantity: 7</p>
-    <p class="col-3 center">$0.00</p>
-</div>
-
-<div class="container">
-    <img class="col-2" src="../../../assets/imgs/placeholder.jpg" alt="a product"/>
-    <h2>Cake Pop</h2>
-    <p class="col-3 center">Quantity: 7</p>
-    <p class="col-3 center">$0.00</p>
-</div>
+ -->
