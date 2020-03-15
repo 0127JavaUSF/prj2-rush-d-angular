@@ -13,7 +13,7 @@
     height: 5vh;
     border-radius: 5px;
     text-align: center;
-    color: #fff;
+    color: white;
     background-size: cover;
     background-position: center;
     cursor: pointer;
@@ -23,23 +23,23 @@
 }
 
 .cake{
-    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/category/cake.jpg");
+    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/category/cake30.jpg");
 }
 
 .pie{
-    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/category/pie.jpg");
+    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/category/pie30.jpg");
 }
 
 .pastry{
-    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/category/pastry.jpg");
+    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/category/pastry30.jpg");
 }
 
 .frozen{
-    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/category/frozen.jpg");
+    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/category/frozen30.jpg");
 }
 
 .all{
-    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/category/all.jpg");
+    background-image: url("https://rush-p2.s3.us-east-2.amazonaws.com/upload/category/all30.jpg");
     background-position: bottom;
 }
 
@@ -49,18 +49,19 @@
     margin-top: 20px;
 }
 
-/*product*/
+/*product card*/
 .product{
     cursor: pointer;
     margin: 15px;
     padding: 0;
 }
 
-.container{
+.container.products{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin: 0 auto;
 }
 
 h2{
