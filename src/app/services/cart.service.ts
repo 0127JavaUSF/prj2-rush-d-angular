@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../classes/product/product';
 import { OrderItem } from '../classes/orderItem';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,12 +9,14 @@ import { OrderItem } from '../classes/orderItem';
 export class CartService {
 
 
+
+  constructor() { }
+
+
   // qty: number;
 
   cart: Array<OrderItem> = new Array<OrderItem>();
-
-
-  constructor() { }
+  subtotal: number;
 
   addOrderItem(product: Product, quantity: number){
     console.log("Given product id of: " + product.productId);
@@ -47,6 +50,7 @@ export class CartService {
       this.cart.push(newOrderItem);
       console.log("new item added");
     }
+ 
 
   }
 
@@ -66,9 +70,27 @@ export class CartService {
           orderItemInCart.qty += addOrSub1;
         }
       });
+  
 
 
   }
+
+  public getSubTotal(): number {
+    let subtotal = 0;
+    this.cart.forEach(orderItem => {
+      subtotal += orderItem.product.productPrice * orderItem.qty; 
+    });
+    return subtotal;
+  }
+
+  removeItemInCart(orderItem: OrderItem) {
+
+    this.cart = this.cart.filter(orderItemInCart => 
+      orderItemInCart.product.productId !== orderItem.product.productId); 
+      
+  }
+
+
 
 
 }
