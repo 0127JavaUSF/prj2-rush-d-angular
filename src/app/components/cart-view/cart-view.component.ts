@@ -52,6 +52,8 @@ export class CartViewComponent implements OnInit {
   removeItem(orderItem: OrderItem){
     this.cartService.removeItemInCart(orderItem);
     console.log("item removed");
+    orderItem.qty = 0;
+    this.changeSubTotal();     
 
   }
 
