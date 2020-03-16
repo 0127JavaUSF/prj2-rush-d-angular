@@ -20,6 +20,7 @@ export class CartViewComponent implements OnInit {
     //delete this, for testing only
     console.log("The active user id is: " + this.cartService.custId);
     this.cartService.prepOrderJson();
+    
   }
 
   addQty(orderItem: OrderItem){
@@ -66,6 +67,7 @@ export class CartViewComponent implements OnInit {
   }
 
   submitOrder(){
+    this.cartService.prepOrderJson();
     this.cartService.performOrderSubmission().subscribe(orderJson => {
       console.log(orderJson);
 
