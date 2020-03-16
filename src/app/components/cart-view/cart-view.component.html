@@ -2,6 +2,7 @@
 
 <div class="container row no-gutter col-12" >
    
+    <p *ngIf= "cartEmpty" class="cartEmpty col-lg-6 col-md-9 col-sm-12">You have no items in your cart</p>
     <div *ngFor="let orderItem of cart" class="cartItems col-lg-6 col-md-9 col-sm-12">
         <div class="container main">
             <img src={{orderItem.product.imgUrl}} class="img-fluid col-3" alt="...">

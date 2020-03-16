@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { OrderItem } from 'src/app/classes/orderItem';
+import { SessionService } from 'src/app/service/session.service';
+import { LoginServiceService } from 'src/app/services/login-service.service';
 
 @Component({
   selector: 'app-cart-view',
@@ -12,15 +14,39 @@ export class CartViewComponent implements OnInit {
 
   cart: OrderItem[] = this.cartService.cart;
   subtotal:number;
-  constructor(private router: Router, private cartService: CartService) { }
+  cartEmpty: boolean;
+
+  constructor(private router: Router, private cartService: CartService, private session: SessionService, private login: LoginServiceService) { }
 
   ngOnInit(): void {
     this.changeSubTotal();
     
     //delete this, for testing only
     console.log("The active user id is: " + this.cartService.custId);
+
+    this.login.performSessionDetect()
+  .subscribe(genericResponse => {
+    console.log(genericResponse);
+    console.log(typeof(genericResponse))
+    if (genericResponse.response == 'User has active session') {
+      console.log('Authorized cookie found');
+      this.session.setActive(true);
+    }
+  }, error => console.log(error));
+
+  this.checkCart();
+
   }
 
+  checkCart(){
+    if(this.cart.length == 0){
+      this.cartEmpty = true;
+    }
+  }
+  
+
+  
+  
   addQty(orderItem: OrderItem){
     
     if(orderItem.qty >= 5){
@@ -75,6 +101,10 @@ export class CartViewComponent implements OnInit {
       console.log(orderJson);
     }, error =>
     console.log(error));
+
+    this.cartService.cart = new Array<OrderItem>();
+    this.router.navigate(['products']);
+    
 
   }
 }
