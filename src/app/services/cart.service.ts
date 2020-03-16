@@ -13,10 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class CartService {
 
-
-
   constructor(private httpClient: HttpClient) { }
-
 
   // qty: number;
 
@@ -26,9 +23,9 @@ export class CartService {
 
   orderJson: OrderJson = new OrderJson();
 
+  baseurl = 'http://localhost:9009';
+  orderApi = 'rush/orders';
 
-  baseurl = "http://localhost:9009";
-  orderApi = "rush/orders";
 
   performOrderSubmission(): Observable<OrderJson>{
     return this.httpClient.post<OrderJson>(`${this.baseurl}/${this.orderApi}`, this.orderJson, {withCredentials: true});
