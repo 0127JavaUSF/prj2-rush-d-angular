@@ -66,9 +66,9 @@ export class CartViewComponent implements OnInit {
   }
 
   submitOrder(){
-    this.cartService.performOrderSubmission().subscribe(orderJson => {
+    this.cartService.performOrderSubmission()
+    .subscribe(orderJson => {
       console.log(orderJson);
-
     }, error =>
     console.log(error));
 

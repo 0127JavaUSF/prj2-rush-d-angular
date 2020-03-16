@@ -15,13 +15,9 @@ export class CartService {
 
 
 
-<<<<<<< HEAD
   constructor(private httpClient: HttpClient) { }
 
 
-=======
-  constructor() { }
->>>>>>> b729d1169c870b4fba53697833529a706fe695fd
   // qty: number;
 
   cart: Array<OrderItem> = new Array<OrderItem>();
@@ -31,11 +27,11 @@ export class CartService {
   orderJson: OrderJson = new OrderJson;
 
 
-  baseurl = `http://localhost:9009`;
-  orderApi = `rush/orders`;
+  baseurl = "http://localhost:9009";
+  orderApi = "rush/orders";
 
   performOrderSubmission(): Observable<OrderJson>{
-    return this.httpClient.post<OrderJson>(`${this.baseurl}/${this.orderApi}`, {withCredentials: true});
+    return this.httpClient.post<OrderJson>(`${this.baseurl}/${this.orderApi}`, this.orderJson, {withCredentials: true});
   }
 
   addOrderItem(product: Product, quantity: number){
@@ -54,7 +50,6 @@ export class CartService {
       }
     });
 
-
     //add quantity or add new if not existing
     if (productFoundInCart == 1){
       //add quantity
@@ -70,8 +65,6 @@ export class CartService {
       this.cart.push(newOrderItem);
       console.log("new item added");
     }
- 
-
   }
 
 
@@ -90,9 +83,6 @@ export class CartService {
           orderItemInCart.qty += addOrSub1;
         }
       });
-  
-
-
   }
 
   public getSubTotal(): number {
@@ -133,11 +123,5 @@ export class CartService {
 
 
     console.log(this.orderJson);
-
-
   }
-
-
-
-
 }
