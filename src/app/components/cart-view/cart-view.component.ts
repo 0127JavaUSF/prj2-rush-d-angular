@@ -65,10 +65,11 @@ export class CartViewComponent implements OnInit {
   }
 
   submitOrder(){
+
     this.cartService.prepOrderJson();
     this.cartService.performOrderSubmission().subscribe(orderJson => {
-      console.log(orderJson);
 
+      console.log(orderJson);
     }, error =>
     console.log(error));
 

@@ -56,6 +56,5 @@ export class ProductDetailComponent implements OnInit {
 
     this.cartService.addOrderItem(this.product, this.quantity);
     this.cartService.cartLog();
-    this.router.navigate(['products']);
   }
 }
