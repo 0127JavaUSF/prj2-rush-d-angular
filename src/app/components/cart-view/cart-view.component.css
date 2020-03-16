@@ -1,3 +1,7 @@
+img{
+    width: 175px;
+    padding: 0;
+}
 
 
 .row.no-gutter{
@@ -5,7 +9,7 @@
     margin-left: 0;
 }
 
-.cartItems, .ordSum{
+.cartItems, .ordSum, .cartEmpty{
     margin: 20px;
 }
 
