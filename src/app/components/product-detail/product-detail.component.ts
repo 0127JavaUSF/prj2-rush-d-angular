@@ -12,6 +12,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class ProductDetailComponent implements OnInit {
   product: Product;
   id: number;
+  success = document.getElementById('success');
 
   // tslint:disable-next-line: max-line-length
   constructor(private cartService: CartService, private router: Router, private route: ActivatedRoute, private productService: ProductService) { }
@@ -41,9 +42,7 @@ export class ProductDetailComponent implements OnInit {
         // console.log(data)
         this.product = data;
       }, error => console.log(error));
-
-
-
+ 
   }
 
   viewProducts(){
@@ -57,4 +56,5 @@ export class ProductDetailComponent implements OnInit {
     this.cartService.addOrderItem(this.product, this.quantity);
     this.cartService.cartLog();
   }
+
 }

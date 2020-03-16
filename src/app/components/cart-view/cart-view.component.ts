@@ -64,11 +64,14 @@ export class CartViewComponent implements OnInit {
     this.router.navigate(['products']);
   }
 
+  viewOrderHistory(){
+    this.router.navigate(['history']);
+  }
   submitOrder(){
 
     this.cartService.prepOrderJson();
     this.cartService.performOrderSubmission().subscribe(orderJson => {
-
+      this.viewOrderHistory()
       console.log(orderJson);
     }, error =>
     console.log(error));
