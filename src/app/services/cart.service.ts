@@ -24,7 +24,7 @@ export class CartService {
   subtotal: number;
   custId: number;
 
-  orderJson: OrderJson = new OrderJson;
+  orderJson: OrderJson = new OrderJson();
 
 
   baseurl = "http://localhost:9009";
