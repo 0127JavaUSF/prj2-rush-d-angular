@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { SummarylistComponent } from './components/summarylist/summarylist.component';
 import { CartViewComponent } from './components/cart-view/cart-view.component';
-import { CartOrderSummaryComponent } from './components/cart-order-summary/cart-order-summary.component';
 
 import { HeaderComponent } from './components/header/header.component';
 
@@ -31,7 +30,6 @@ import { CreditsComponent } from './components/credits/credits/credits.component
     SummaryComponent,
     SummarylistComponent,
     CartViewComponent,
-    CartOrderSummaryComponent,
     HeaderComponent,
     LoginComponent,
     SignUpComponent,
